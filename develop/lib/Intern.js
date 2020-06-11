@@ -12,6 +12,6 @@ class Intern {
     }
 }
 
-const employeeProperties = new Intern('Sammon', 3, 'peter1@gmail.com', 'sammon007')
+const intern = new Intern('Sammon', 3, 'peter1@gmail.com', 'sammon007')
 
-internProperties.getRole();
+intern.getRole();

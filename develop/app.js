@@ -4,6 +4,8 @@ const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
+const util = require('util');
+const writeFileAsync = util.promisify(fs.writeFile);
 
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
@@ -40,14 +42,51 @@ function runInquirer() {
 
 
 }
-runInquirer();
+function generatedMarkdown(answers) {
+    return `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>${answers.name}</h1>
+        <ul>
+            <li>${answers.position}</li>
+            <li>${answers.id}</li>
+            <li>${answers.role}</li>
+        </ul>
+    </body>
+    </html>`
+
+
+        ;
+}
+runInquirer()
+    // render()
+    .then(function (answers) {
+        // set var for the generated markdown function
+        const html = generatedMarkdown(answers);
+        // returning data back to the file
+
+        return writeFileAsync('team.html', html);
+    })
+    // set a then function
+    .then(function () {
+        console.log('Successfully wrote to team.html');
+    })
+    // and catch something if there are any errors
+    .catch(function (err) {
+        console.log(err);
+    });
+
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
-render(
-
-)
 
 // After you have your html, you're now ready to create an HTML file using the HTML
 // returned from the `render` function. Now write it to a file named `team.html` in the

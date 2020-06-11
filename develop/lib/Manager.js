@@ -12,6 +12,6 @@ class Manager {
     }
 }
 
-const managerProperties = new Manager('Ron', 4, 'goodwin4@gmail.com', 'sammon123')
+const manager = new Manager('Ron', 4, 'goodwin4@gmail.com', 'sammonPeterson')
 
-managerProperties.getRole();
+manager.getRole();

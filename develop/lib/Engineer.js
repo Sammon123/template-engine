@@ -14,4 +14,5 @@ class Engineer {
     }
 }
 
-const engineerProperties = new Engineer('John', 2, 'sammon3@gmail.com', 'sammon125');
+const engineer = new Engineer('John', 2, 'sammon3@gmail.com', 'sammon125');
+engineer.getRole();

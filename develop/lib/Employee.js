@@ -12,6 +12,6 @@ class Employee {
     }
 }
 
-const employeeProperties = new Employee('Peter', 1, 'petersammon2@gmail.com', 'sammon123')
+const employee = new Employee('Peter', 1, 'petersammon2@gmail.com', 'sammon123')
 
-employeeProperties.getRole();
+employee.getRole();
