@@ -5,14 +5,13 @@ class Engineer {
         this.id = id;
         this.email = email;
         this.github = github;
-        return Engineer
+
 
     }
-    printInfo() {
-        console.log(`My name is ${this.name}`);
-        const engineer = new Engineer(John)
-        console.log(John);
+    getRole() {
+        console.log(`${Engineer}`);
 
-        printInfo(john);
     }
 }
+
+const engineerProperties = new Engineer('John', 2, 'sammon3@gmail.com', 'sammon125');

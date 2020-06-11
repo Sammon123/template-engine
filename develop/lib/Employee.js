@@ -5,14 +5,13 @@ class Employee {
         this.id = id;
         this.email = email;
         this.github = github;
-        return Employee
-
     }
-    printInfo() {
-        console.log(`My name is ${this.name}`);
-        let employee = new Employee(John)
-        console.log(John);
+    getRole() {
+        console.log(`${Employee}`);
 
-        employee.printInfo();
     }
 }
+
+const employeeProperties = new Employee('Peter', 1, 'petersammon2@gmail.com', 'sammon123')
+
+employeeProperties.getRole();

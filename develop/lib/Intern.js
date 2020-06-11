@@ -5,12 +5,13 @@ class Intern {
         this.id = id;
         this.email = email;
         this.school = school;
-        return Intern
+    }
+    getRole() {
+        console.log(`${Intern}`);
 
     }
-    printInfo() {
-        console.log(`My name is ${this.name}`);
-        const intern = new Intern(John)
-        printInfo(intern);
-    }
 }
+
+const employeeProperties = new Intern('Sammon', 3, 'peter1@gmail.com', 'sammon007')
+
+internProperties.getRole();

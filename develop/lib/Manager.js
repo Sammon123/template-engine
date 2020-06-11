@@ -5,12 +5,13 @@ class Manager {
         this.id = id;
         this.email = email;
         this.officeNumber = officeNumber;
-        return Manager;
+    }
+    getRole() {
+        console.log(`${Manager}`);
 
     }
-    printInfo() {
-        console.log(`My name is ${this.name}`);
-        const manager = new Manager(Peter)
-        printInfo(manager);
-    }
 }
+
+const managerProperties = new Manager('Ron', 4, 'goodwin4@gmail.com', 'sammon123')
+
+managerProperties.getRole();
