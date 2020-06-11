@@ -11,6 +11,8 @@ class Engineer {
     printInfo() {
         console.log(`My name is ${this.name}`);
         const engineer = new Engineer(John)
-        printInfo(engineer);
+        console.log(John);
+
+        printInfo(john);
     }
 }
